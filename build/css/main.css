@@ -660,7 +660,14 @@ input:hover::-webkit-calendar-picker-indicator {
 .order-pop-close {
   display: none; }
 
+.mob-date {
+  display: none; }
+
 @media (max-width: 991px) {
+  .des-date {
+    display: none; }
+  .mob-date {
+    display: block; }
   .order-form {
     position: fixed;
     display: none;
@@ -818,3 +825,10 @@ input:hover::-webkit-calendar-picker-indicator {
   .order-bot__price {
     font-size: 16px;
     line-height: 30px; } }
+
+@media (max-width: 374px) {
+  .order-page h1 {
+    font-size: 26px; }
+  .tooltip {
+    -webkit-transform: translate(75%, -60%);
+            transform: translate(75%, -60%); } }
