@@ -1,0 +1,38 @@
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+ul{
+    padding-left: 0;
+}
+ol{
+    padding-left: 0;
+}
+input:focus{
+    outline: none
+}
+textarea:focus{
+    outline: none
+}
+button:focus{
+    outline: none
+}
+textarea:focus{
+    outline: none;
+}
+body{
+    min-width: 320px;
+}
+

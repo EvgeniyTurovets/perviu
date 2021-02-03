@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/bootstrap/bootstrap.min.css'>
+    <link rel="stylesheet" href="./libs/jquery/jq-ui.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/selectric/selectric.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/main.min.css'>
+</head>
+<div class="order-page">
+    <div class="container">
+        <h1>Оплата и доставка</h1>
+        <div class="row">
+            <div class="col-lg-9">
+
+
+                <div class="order-step">
+                    <div class="order-step-title"><span>01</span>Вы представляете организацию или хотите купить для себя? </div>
+                    <div class="checkbox-wrap">
+                        <label class="checkbox-item">Организация
+                                <input type="radio" checked="checked" name="1">
+                                <span class="checkmark"></span>
+                            </label>
+
+                        <label class="checkbox-item">Физическое лицо
+                                <input type="radio" name="1">
+                                <span class="checkmark"></span>
+                            </label>
+                    </div>
+                </div>
+
+                <div class="order-step">
+                    <div class="order-step-title"><span>02</span>Хорошо. Пожалуйста, представьтесь</div>
+                    <input class="big-input" type="text" placeholder="ФИО">
+                </div>
+
+                <div class="order-step">
+                    <div class="order-step-title"><span>02</span>Хорошо. Пожалуйста, укажите название и данные организации</div>
+                    <div class="input-flex-wrap">
+                        <input type="text" placeholder="Название">
+                        <input type="number" placeholder="ИНН">
+                        <input type="number" placeholder="КПП">
+                    </div>
+                </div>
+
+                <div class="order-step">
+                    <div class="order-step-title"><span>03</span>Как бы вы хотели получить заказ?</div>
+                    <div class="checkbox-wrap">
+                        <label class="checkbox-item">Самовывоз
+                                <input type="radio" checked="checked" name="2">
+                                <span class="checkmark"></span>
+                            </label>
+
+                        <label class="checkbox-item">Доставка
+                                <input type="radio" name="2">
+                                <span class="checkmark"></span>
+                            </label>
+                    </div>
+
+                    <div class="map-flex row">
+                        <div class="map-flex-left col-xl-4">
+                            <div class="map-flex-left1">
+                                Вы можете забрать свой заказ после согласования самовывоза по адресу:
+                            </div>
+                            <div class="map-flex-left2">
+                                Московская область, Истринский район, дер. Ленино 2Б, ТК “Ленино”
+                            </div>
+                        </div>
+                        <div class="map-flex-right col-xl-8">
+                            <div class="map-wrap">
+                                <div id="ymap_ctrl_display" style="display: none; width: 100%; height: 100%; position: absolute; background-color: rgba(0, 0, 0, 0.5); z-index: 100; pointer-events: none;">
+
+                                    <div style="position: relative; top:40%; left: 0; right: 0; color: white; text-align: center; font-size: 1.8em; pointer-events: none;">Чтобы изменить масштаб, прокручивайте карту, удерживая клавишу Ctrl.</div>
+                                </div>
+                                <div id="map" class="map"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-step">
+                    <div class="order-step-title"><span>03</span>Как бы вы хотели получить заказ?</div>
+                    <div class="checkbox-wrap">
+                        <label class="checkbox-item">Самовывоз
+                                    <input type="radio"  name="3">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                        <label class="checkbox-item">Доставка
+                                    <input type="radio" name="3" checked="checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                    </div>
+                    <br>
+                    <div class="order-step-title">Отлично. Введите адрес доставки или укажите его на карте</div>
+
+                    <div class="input-flex-wrap2">
+                        <input type="text" placeholder="Адрес" list="list">
+                        <datalist id="list">
+                                <option>Адрес1 </option>
+                                <option>Адрес2 </option>
+                                <option>Адрес3 </option>
+                            </datalist>
+                        <input type="number" placeholder="Квартира">
+                        <input type="number" placeholder="Этаж">
+                    </div>
+                    <div class="map-flex">
+                        <div class="map-wrap">
+                            <div id="ymap_ctrl_display" style="display: none; width: 100%; height: 100%; position: absolute; background-color: rgba(0, 0, 0, 0.5); z-index: 100; pointer-events: none;">
+
+                                <div style="position: relative; top:40%; left: 0; right: 0; color: white; text-align: center; font-size: 1.8em; pointer-events: none;">Чтобы изменить масштаб, прокручивайте карту, удерживая клавишу Ctrl.</div>
+                            </div>
+                            <div id="map2" class="map"></div>
+                        </div>
+                    </div>
+
+                    <div class="map-check">
+                        <label class="checkbox-item">Есть ограничение по высоте (арка, подземный паркинг)
+                                <input type="checkbox" name="4" checked="checked">
+                                <span class="checkmark2"></span>
+                            </label>
+                    </div>
+                </div>
+
+                <div class="order-step">
+                    <div class="order-step-title"><span>04</span>Когда бы вы хотели получить заказ?</div>
+                    <div class="input-data">
+                        <input type="date" id="datepicker_value" value="" placeholder="__ . __ . ____" readonly>
+                        <div id="datepicker"></div>
+                    </div>
+                </div>
+
+                <div class="order-step">
+                    <div class="order-step-title"><span>05</span>Во сколько привезти?</div>
+                    <label class="checkbox-item">После 19:00 за 100₽
+                            <input type="radio"  name="6">
+                            <span class="checkmark"></span>
+                        </label>
+
+                    <label class="checkbox-item">В течение дня за 319₽
+                            <input type="radio" name="6" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+
+                    <label class="checkbox-item">Стандартная доставка за 459₽
+                        <div class="tooltip" alt="Подсказка номер 1" data-tooltip="Подсказка номер 1">?</div>
+                        <input type="radio" name="6">
+                        <span class="checkmark"></span>
+                        </label>
+
+                    <label class="checkbox-item">Точно ко времени за 819₽
+                            <input type="radio" name="6" >
+                            <span class="checkmark"></span>
+                        </label>
+
+                    <label class="checkbox-item">Курьерская доставка за 209₽
+                            <div class="tooltip" data-tooltip="Подсказка номер 1">?</div>
+                            <input type="radio" name="6" >
+                            <span class="checkmark"></span>
+                        </label>
+                </div>
+
+                <div class="order-step order-step6">
+                    <div class="order-step-title"><span>06</span>Когда бы вы хотели получить заказ?</div>
+                    <label class="checkbox-item">Подъём на этаж
+                            <input class="step6-radio step6-radio-active" type="radio" name="7" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                    <div class="step6__wrap">
+                        <input placeholder="Этаж" style="width: 100px;">
+                        <div class="checkbox-wrap step6">
+                            <label class="checkbox-item">Есть лифт
+                                <input type="checkbox" name="8" checked="checked">
+                                <span class="checkmark2"></span>
+                            </label>
+
+                            <label class="checkbox-item">Есть грузовой лифт
+                                <input type="checkbox" name="9" checked="checked">
+                                <span class="checkmark2"></span>
+                            </label>
+
+                            <label class="checkbox-item">Технический этаж
+                                <input type="checkbox" name="10" checked="checked">
+                                <span class="checkmark2"></span>
+                            </label>
+
+                        </div>
+                        <div class="step6-price">450₽</div>
+                    </div>
+
+
+                    <label class="checkbox-item">Разгрузка на месте за 450₽
+                            <input  class="step6-radio" type="radio" name="7" >
+                            <span class="checkmark"></span>
+                        </label>
+                </div>
+
+                <div class="order-step">
+                    <div class="order-step-title"><span>07</span>Когда бы вы хотели получить заказ?</div>
+                    <label class="checkbox-item">Онлайн на сайте
+                            <input type="radio"  name="11" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+
+                    <label class="checkbox-item">При получении наличными
+                            <input type="radio" name="11" >
+                            <span class="checkmark"></span>
+                        </label>
+
+                    <label class="checkbox-item">При получении картой
+                            <input type="radio" name="11" >
+                            <span class="checkmark"></span>
+                        </label>
+                </div>
+
+                <div class="order-step">
+                    <div class="order-step-title"><span>08</span>Ваш e-mail</div>
+                    <input class="medium-input" type="email" placeholder="example@mail.ru">
+                </div>
+
+                <div class="order-step order-step9">
+                    <div class="order-step-title"><span>09</span>Ваш e-mail</div>
+                    <div class="order-step9-wrap">
+                        <input class="medium-input" type="email" placeholder="+7 (999) 111-22-33">
+                        <input type="text" placeholder="Имя">
+                    </div>
+                    <label class="checkbox-item">Обязательно нужен
+                            звонок оператора
+                            <input type="checkbox" name="22" checked>
+                            <span class="checkmark2"></span>
+                        </label>
+                </div>
+
+                <div class="order-step order-step10">
+                    <div class="order-step-title"><span>10</span>Комментарии к заказу</div>
+                    <textarea></textarea>
+                </div>
+
+                <div id="order-bot" class="order-bot-wrap">
+                    <ul>
+                        <li>
+                            <div class="order-step-title"><span>1.</span>Вентиль Valtec угловой для подключения бытовой теxники 1/2" x 1/2"</div>
+                            <span class="order-bot__price">2500₽</span>
+                        </li>
+                        <li>
+                            <div class="order-step-title"><span>2.</span>Измельчитель садовый электрический, ЗУБР ЗИЭ-44-2800, бесшумный, р/с 44 мм, контейнер 60 л, 2800 Вт</div>
+                            <span class="order-bot__price">18 000₽</span>
+                        </li>
+                        <li>
+                            <div class="order-step-title"><span>3.</span>Пластиковая заборная решетка в рулоне RUSSIA 1.8х25 м, ячейка 90х100 мм, зеленая</div>
+                            <span class="order-bot__price">7150₽</span>
+                        </li>
+                        <li>
+                            <div class="order-step-title"><span>4.</span>Пластиковый движок для уборки снега PALISAD 540х700х1475 мм, 2 части (ковш, стальная рукоятка)</div>
+                            <span class="order-bot__price">2500₽</span>
+                        </li>
+                    </ul>
+                    <div class="order-bot-sum">
+                        <div class="order-bot-sum__text">
+                            Сумма заказа
+                            <button type="button" id="edit-btn-pop">Редактировать заказ</button>
+                        </div>
+                        <div class=" order-bot-sum__val ">
+                            27 650₽
+                        </div>
+                        <button type="button ">
+                            Подтвердить
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-lg-3 ">
+
+                <div class="order-form" id="order-form">
+                    <div class="order__form__back">
+                        <div class="order-pop-close"></div>
+                        <div class="order-form__title ">Детали заказа</div>
+                        <div class="order-bot-wrap ">
+                            <ul>
+                                <li>
+                                    <div class="order-step-title "><span>1.</span>Вентиль Valtec угловой для подключения бытовой теxники 1/2" x 1/2 "</div>
+                                    <div class="order-bot__price ">2500₽
+                                        <div class="order-edit ">
+                                            <div class="order-edit-wrap ">
+                                                <button class="btn-minus ">-</button>
+                                                <span>1</span>
+                                                <button class="btn-plus ">+</button>
+                                            </div>
+
+                                            <button class="delete "></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="order-step-title "><span>2.</span>Измельчитель садовый электрический, ЗУБР ЗИЭ-44-2800, бесшумный, р/с 44 мм, контейнер 60 л, 2800 Вт</div>
+                                    <div class="order-bot__price ">18 000₽
+                                        <div class="order-edit ">
+                                            <div class="order-edit-wrap ">
+                                                <button class="btn-minus ">-</button>
+                                                <span>1</span>
+                                                <button class="btn-plus ">+</button>
+                                            </div>
+
+                                            <button class="delete "></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="order-step-title "><span>3.</span>Пластиковая заборная решетка в рулоне RUSSIA 1.8х25 м, ячейка 90х100 мм, зеленая</div>
+                                    <div class="order-bot__price ">7150₽
+                                        <div class="order-edit ">
+                                            <div class="order-edit-wrap ">
+                                                <button class="btn-minus ">-</button>
+                                                <span>1</span>
+                                                <button class="btn-plus ">+</button>
+                                            </div>
+
+                                            <button class="delete "></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="order-step-title "><span>4.</span>Пластиковый движок для уборки снега PALISAD 540х700х1475 мм, 2 части (ковш, стальная рукоятка)</div>
+                                    <div class="order-bot__price ">2500₽
+                                        <div class="order-edit ">
+                                            <div class="order-edit-wrap ">
+                                                <button class="btn-minus ">-</button>
+                                                <span>1</span>
+                                                <button class="btn-plus ">+</button>
+                                            </div>
+
+                                            <button class="delete "></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="order-step-title "><span>4.</span>Пластиковый движок для уборки снега PALISAD 540х700х1475 мм, 2 части (ковш, стальная рукоятка)</div>
+                                    <div class="order-bot__price ">2500₽
+                                        <div class="order-edit ">
+                                            <div class="order-edit-wrap ">
+                                                <button class="btn-minus ">-</button>
+                                                <span>1</span>
+                                                <button class="btn-plus ">+</button>
+                                            </div>
+
+                                            <button class="delete "></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="order-step-title "><span>4.</span>Пластиковый движок для уборки снега PALISAD 540х700х1475 мм, 2 части (ковш, стальная рукоятка)</div>
+                                    <div class="order-bot__price ">2500₽
+                                        <div class="order-edit ">
+                                            <div class="order-edit-wrap ">
+                                                <button class="btn-minus ">-</button>
+                                                <span>1</span>
+                                                <button class="btn-plus ">+</button>
+                                            </div>
+
+                                            <button class="delete "></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="order-step-title "><span>4.</span>Пластиковый движок для уборки снега PALISAD 540х700х1475 мм, 2 части (ковш, стальная рукоятка)</div>
+                                    <div class="order-bot__price ">2500₽
+                                        <div class="order-edit ">
+                                            <div class="order-edit-wrap ">
+                                                <button class="btn-minus ">-</button>
+                                                <span>1</span>
+                                                <button class="btn-plus ">+</button>
+                                            </div>
+
+                                            <button class="delete "></button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="order-form__bot ">
+                            <div class="order-form__bot__text ">Итого:</div>
+                            <div class="order-form__bot__val ">27 650₽</div>
+                            <button type="button ">Оформить</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="tooltip"></div>
+
+<body>
+    <script src="./libs/jquery/jquery.min.js "></script>
+    <script src="./libs/jquery/jq-ui.js "></script>
+    <script src="./libs/selectric/selectric.min.js "></script>
+    <script type="text/javascript " src="https://api-maps.yandex.ru/2.1-dev/?lang=ru_RU "></script>
+    <script src="./js/main.js "></script>
+</body>
+
+</html>
