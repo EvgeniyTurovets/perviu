@@ -34,10 +34,12 @@ $(function() {
     });
 
     $('.step6-radio').on('change', function() {
-        if ($('.step6-radio-active').is(':checked')) {
-            $('.step6__wrap').slideDown()
-        } else {
-            $('.step6__wrap').slideUp()
+        if ($(this).is(':checked')) {
+            $('.step6__wrap').hide()
+            setTimeout(() => {
+                $(this).closest('.checkbox-item').next('.step6__wrap').slideDown(200)
+            }, 200);
+
         }
     })
 

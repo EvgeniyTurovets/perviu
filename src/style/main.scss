@@ -49,7 +49,7 @@ body {
 
 .order-step {
     padding-left: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 }
 
 .checkbox-item {
@@ -372,7 +372,7 @@ input:hover::-webkit-calendar-picker-indicator {
 }
 
 .step6__wrap {
-    margin: 21px 0;
+    margin-bottom: 10px;
     .checkbox-item {
         font-weight: 400;
     }
@@ -675,6 +675,17 @@ input:hover::-webkit-calendar-picker-indicator {
 
 .mob-date {
     display: none;
+}
+
+.checkbox-wrap.step6 {
+    margin-top: 10px;
+}
+
+@media(min-width: 768px) {
+    .checkbox-wrap.step6.first-child {
+        flex-direction: column;
+        height: 62px;
+    }
 }
 
 @media(max-width: 991px) {
